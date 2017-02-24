@@ -1,11 +1,22 @@
 // define a leap year function
 var isLeapYear = (year) => {
 	
-    if(0 === year % 400 || (0 === % 4 && 0 !== year % 100 )){
-    	return true;	
+	// check to see that year is numeric
+	if (isNan(year)) {
+	    throw new Error("Error: Input must be numeric.");
     }
-    return false;
-};    
+    
+    //check to see that the year is an interger
+    if (!Number.isinteger(year)) {
+    	throw new Error("Error: Input must be an integer value. ")
+    }
 
+
+
+    return (0 === year % 400 || (0 === % 4 && 0 !== year % 100 )){	
+
+
+
+};   
 // export isLeapYear for use in other contracts
 module.exports = isLeapYear;

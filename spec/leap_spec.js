@@ -1,7 +1,7 @@
 // import the code to the test
 var isLeapYear = require("../index");
 
-describe("A program to determine if a year is a leap year",()=>{
+describe("A program to determine if a year is a leap year",() => {
 
     it("define a function called isLeapYear", () => {
 
@@ -34,5 +34,11 @@ describe("A program to determine if a year is a leap year",()=>{
     it("Returns true for years divisible by 400", () => {
         expect(isLeapYear(800).tobe(true));
         expect(isLeapYear(801).tobe(false));
+    });
+
+    it("throws an exception if a non-integer value is submitted", () => {
+    	expect(isLeapYear.bind(null, "two thousand")).tothrowError("Error : Iput must be numeric.");
+    	expect(isLeapYear.bind(null, "2000")).not.tothrowError();
+    	expect(isLeapYear.bind(null, "2017.235")).tothrowError("Error: Input must be an integer value.");
     });
 });
