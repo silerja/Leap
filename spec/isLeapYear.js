@@ -11,8 +11,6 @@ var isLeapYear = (year) => {
     	throw new Error("Error: Input must be an integer value. ")
     }
 
-
-
     return (0 === year % 400 || (0 === % 4 && 0 !== year % 100 )){	
 
 
