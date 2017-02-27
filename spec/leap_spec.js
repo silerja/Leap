@@ -28,12 +28,13 @@ describe("A program to determine if a year is a leap year",() => {
         //years chosen by random fitting example
         expect(isLeapYear(1800).tobe(false));
         expect(isLeapYear(1900).toBe(false));
-        expect(isLeapYear(1801).tobe(true));  
+        expect(isLeapYear(2100).tobe(false));  
     });
 
     it("Returns true for years divisible by 400", () => {
-        expect(isLeapYear(800).tobe(true));
-        expect(isLeapYear(801).tobe(false));
+        expect(isLeapYear(1600).tobe(true));
+        expect(isLeapYear(2000).tobe(false));
+        expect(isLeapYear(2400).toBe(true));
     });
 
     it("throws an exception if a non-integer value is submitted", () => {
